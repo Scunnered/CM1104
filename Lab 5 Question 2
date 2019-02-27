@@ -1,0 +1,63 @@
+/*
+Author Ross M 1105864
+Question 2 Password Checker
+*/
+
+import java.util.Scanner;
+
+public class PasswordChecker {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("•    The password must be at least eight characters long.\n" +
+"\n•    The password must have at least one uppercase and one lowercase letter.\n" +
+"\n•    The password must have at least one digit.\n" + "\nEnter password here: ");
+        String passwordOne = input.nextLine();
+        System.out.print("Re-enter same password here: ");
+        String passwordTwo = input.nextLine();
+
+        boolean isValid = doesPasswordMeetReq(passwordOne, passwordTwo);
+
+        if (!isValid) {
+            while (!isValid) {
+                System.out.print("Try again, Look at the rules and check if the password meets these requirements. Re-type password here once you are ready: ");
+                passwordOne = input.nextLine();
+                System.out.print("Re-enter same password here: ");
+                passwordTwo = input.nextLine();
+
+                isValid = doesPasswordMeetReq(passwordOne, passwordTwo);}
+        }
+
+        System.out.println("Password has been changed");
+
+        input.close();}
+
+    public static boolean doesPasswordMeetReq(String password1, String password2) {
+        boolean equalPassword = false;
+        boolean upperAndLowerCaseLetters = false;
+        boolean hasNumber = false;
+        boolean meetsCharacterLength = false;
+
+        equalPassword = password1.equals(password2);
+
+        boolean isLowercaseCharacter = false;
+        boolean isUppercaseCharacter = false;
+            for (int i = 0; i < password1.length(); i++) {
+            char currentChar = password1.charAt(i);
+
+            if (Character.isLowerCase(currentChar)) {
+                isLowercaseCharacter = true;
+        } else if (Character.isUpperCase(currentChar)) {
+                isUppercaseCharacter = true;}
+        }
+        upperAndLowerCaseLetters = isLowercaseCharacter && isUppercaseCharacter;
+
+        for (int i = 0; i < password1.length(); i++) {
+            char currentChar = password1.charAt(i);
+
+            if (Character.isDigit(currentChar)) {
+                hasNumber = true;}
+        }
+
+        meetsCharacterLength = password1.length() > 8 && password2.length() > 8;
+        return equalPassword && upperAndLowerCaseLetters && hasNumber && meetsCharacterLength;}
+}
