@@ -1,0 +1,16 @@
+/*
+Author Ross M 1105864
+Question 1 Double Arithmetic
+ */
+ 
+	public static void main(String[] args) {
+        	char a = 11;
+        	char b = 10;
+        
+       		System.out.println(a + b);
+                	System.out.println(a * b);
+                        	System.out.println(a - b);
+                                	System.out.println(a / b);
+                                            System.out.println(a % b);
+    
+    }
