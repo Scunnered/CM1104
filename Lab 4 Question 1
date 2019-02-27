@@ -1,0 +1,26 @@
+/*
+Author Ross M 1105864
+Question 4 RollsUntilTwelve
+*/
+
+import java.util.Scanner;
+public class RollsUntilTwelve {
+
+    public static void main(String[] args) {
+        int counter = 0;
+        int sum = 0;   
+        while (sum != 12) {
+
+            int dieOne = (int)(Math.random() * 6 + 1);
+            int dieTwo = (int)(Math.random() * 6 + 1);
+            sum = dieOne + dieTwo;
+            counter++;
+            if (sum == 12) {
+
+                System.out.println(sum + " BOXCARS! Total of twelve reached and it only took " + counter + " rolls until double six on both die. The probability of Rolling two six-sided dice 25 times gives a probability of 0.505532 that at least once, boxcars will appear.  ");
+                } else {
+
+            }
+        }
+    }
+}
