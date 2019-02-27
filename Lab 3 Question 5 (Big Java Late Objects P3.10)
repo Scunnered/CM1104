@@ -1,3 +1,11 @@
+/*
+Author Ross M 1105864
+Question 5 Big Java textbook Exercise - P3.10
+ 
+The boiling point of water drops by about one degree centigrade for every 300
+meters (or 1,000 feet) of altitude. Improve the program of Exercise P3.9 to allow the
+user to supply the altitude in meters or feet.*/
+
 import java.util.Scanner;
 
 public class Boiling_point {
