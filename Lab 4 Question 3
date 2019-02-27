@@ -1,0 +1,88 @@
+/*
+Author Ross M 1105864
+Question 3 Pontoon
+*/
+
+import java.util.Scanner;
+public class Q5Pontoon
+{
+	public static int numberIsRandom()
+            { return (int)(Math.random()*10 + 1);}
+        
+	public static int total(int davesFirstCard,int davesSecondCard)
+            { return(davesFirstCard+davesSecondCard);}
+        
+	public static boolean getResult(int total,int discoveryOneAKAHouse)
+            { if (total>discoveryOneAKAHouse && total<=21)
+                return(true);
+                else
+                return(false);}
+        
+	public static boolean Failure(int total)
+            { if (total>21)
+                return(true);
+                else
+                return(false);}
+        
+	public static int Hal9000Total(int x)
+            { int Hal9000=0;
+                while (Hal9000 < x)
+                Hal9000 = total(numberIsRandom(),numberIsRandom());	
+                return(Hal9000);}
+	
+	public static void displayCards(int cardsDrawn[])
+            { System.out.print("Dave had drawn the following cards: ");
+                for (int x = 1;x<10;x++)
+                    { if (cardsDrawn[x]!=0)
+                        if (x==1)
+                        System.out.print(cardsDrawn[x]);
+			else
+			System.out.print(","+cardsDrawn[x]):}
+                        System.out.println();}
+	
+	
+                public static void main(String[] args) 
+                    { Scanner kboard = new Scanner(System.in);
+                    final int halsMin = 16;
+                    String choice="";
+                    int[] cardsThatHaveBeenDrawn = new int[10];
+                    int overallValue=0;
+                    int theCount = 3; 
+                    int davesFirstCard, davesSecondCard;
+                    int hal9000=0;
+                    int total;
+		
+                        hal9000 = Hal9000Total(halsMin);
+                        cardsThatHaveBeenDrawn[0] = hal9000;
+                        davesFirstCard = numberIsRandom();
+                        cardsThatHaveBeenDrawn[1] = davesFirstCard;
+                        davesSecondCard = numberIsRandom();
+                        cardsThatHaveBeenDrawn[2] = davesSecondCard;
+                        total = total(davesFirstCard,davesSecondCard);
+                        System.out.println("Good morning Dave, You have "+davesFirstCard+" with a "+davesSecondCard);
+                        System.out.println("I know I've made some very poor decisions recently, but I can give you my complete assurance that my work will be back to normal. I've still got the greatest enthusiasm and confidence in the mission. And I want to help you." + "\n" + "Do you want another card Dave? y/n");
+                        choice=kboard.nextLine();
+
+                            while (choice.equalsIgnoreCase("y"))
+                                { overallValue=numberIsRandom();
+                                cardsThatHaveBeenDrawn[theCount++] = overallValue;
+                                System.out.println("The new card is a "+overallValue);
+                                total=total(total,overallValue);
+                                
+                            if (Failure(total)==true)
+                                { System.out.println("This mission is too important for me to allow you to jeopardize it "+total+" which is over 21, Dave has went bust");
+                                displayCards(cardsThatHaveBeenDrawn);
+                                break; }
+                                else
+				System.out.println("Do you want another card? y/n");
+				choice=kboard.nextLine();}
+		
+                            if (getResult(total,hal9000)==true)
+                                { System.out.println("Just what do you think you're doing, Dave?" + "\n" + "Dave wins! The winning card total was = "+total+ "\n" + "Hal had = "+hal9000);
+                                displayCards(cardsThatHaveBeenDrawn);}
+                            
+                            else
+                                { System.out.println("Look Dave, I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over." + "\n" + "Card total was = "+total+ "\n" + "Hal had = "+hal9000);
+                                displayCards(cardsThatHaveBeenDrawn);}
+	}
+}
