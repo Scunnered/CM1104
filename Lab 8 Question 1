@@ -1,0 +1,67 @@
+/*
+Author Ross M 1105864
+Question 1 3X3 Array
+*/
+
+A) - Write a class that creates a 3x3 array and will allow the user to populate array. It should have
+a method to display it on screen. Test the code
+
+public class Question1A {
+public static void main(String[] args) {
+
+        	Scanner in = new Scanner (System.in);
+        int rows = 3;
+        int columns = 3;
+        int[][] userInput = new int[rows][columns];
+        
+            for (int i = 0; i < userInput.length ; i++) {
+            for (int j = 0; j < userInput[0].length ; j++) {
+        System.out.println("Input " + (i+1) + " row and " + (j+1) + " column input");
+        userInput[i][j] = in.nextInt();}
+            
+        	}
+        	arrayShown(userInput);
+}
+
+B) - Now	amend	your	program so	that	it will	allow	the	user	to	create	a	N	x	N	array	and	
+display	it	on	screen.
+
+public class Question1B {
+public static void main(String[] args) {
+
+        Scanner in = new Scanner (System.in);
+        System.out.println("Input size = ");
+        int N = in.nextInt();
+        int rows = N;
+        int columns = N;
+        int[][] numbers = new int[rows][columns];
+        
+        for (int i = 0; i < numbers.length ; i++) {
+            for (int j = 0; j < numbers[0].length ; j++) {
+                System.out.println("Input " + (i+1) + " row and " + (j+1) + " column input");
+                numbers[i][j] = in.nextInt();}
+                    }
+                    arrayShown(numbers);
+}
+
+C) - Amend this	program so	that	the	user	can	create an	N	x	M	array.
+
+public class Question1C {
+public static void main(String[] args) {
+
+        Scanner in = new Scanner (System.in);
+        System.out.println("How may rows do you want = ");
+        int N = in.nextInt();
+        System.out.println("How many columns do you want = ");
+        int M = in.nextInt();
+        int rows = N;
+        int columns = M;
+        int[][] numbers = new int[rows][columns];
+        
+        for (int i = 0; i < numbers.length ; i++) {
+            for (int j = 0; j < numbers[0].length ; j++) {
+                System.out.println("Input " + (i+1) + " row and " + (j+1) + " column input");
+                numbers[i][j] = in.nextInt();}
+                }
+                arrayShown(numbers);
+}
