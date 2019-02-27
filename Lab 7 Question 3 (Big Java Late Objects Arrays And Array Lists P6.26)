@@ -1,0 +1,55 @@
+/*
+Author Ross M 1105864
+Question 3 Big Java textbook Exercise - P6.26
+
+Write a method
+public static ArrayList<Integer> append(ArrayList<Integer> a, ArrayList<Integer> b)
+that appends one array list after another. For example, if a is
+1 4 9 16
+and b is
+9 7 4 9 11
+then append returns the array list
+1 4 9 16 9 7 4 9 11*/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class P6_26 {
+    public static void main(String[] args) {
+        ArrayList<Integer> firstArrayLength;
+        ArrayList<Integer> secondArrayLength;
+        try (Scanner input = new Scanner(System.in)) {
+            firstArrayLength = new ArrayList<>();
+            System.out.print("enter 1st array length: ");
+            int firstArrayLengthList = input.nextInt();
+            for (int i = 0; i < firstArrayLengthList; i++) {
+                System.out.print("enter number for 1st array: ");
+                firstArrayLength.add(input.nextInt());}
+            secondArrayLength = new ArrayList<>();
+            System.out.print("enter 2nd array length: ");
+            int secondArraylengthList = input.nextInt();
+            for (int i = 0; i < secondArraylengthList; i++) {
+                System.out.print("enter number for 2nd array: ");
+                secondArrayLength.add(input.nextInt());}
+        }
+
+        ArrayList<Integer> newArrayList = append(firstArrayLength, secondArrayLength);
+        System.out.print("all array numbers: ");
+        printEnteredElements(newArrayList);}
+
+    public static ArrayList<Integer> append(ArrayList<Integer> a, ArrayList<Integer> b) {
+        ArrayList<Integer> newArrayList = new ArrayList<>();
+
+            for (int i = 0; i < a.size(); i++) {
+        newArrayList.add(a.get(i));}
+
+            for (int i = 0; i < b.size(); i++) {
+        newArrayList.add(b.get(i));}
+
+        return newArrayList;}
+
+    public static void printEnteredElements(ArrayList<Integer> newArrayList) {
+        for (int i = 0; i < newArrayList.size(); i++) {
+            System.out.print(newArrayList.get(i) + " ");}
+    }
+}
