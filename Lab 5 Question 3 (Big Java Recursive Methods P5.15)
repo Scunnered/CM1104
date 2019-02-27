@@ -1,0 +1,20 @@
+/*
+Author Ross M 1105864
+Question 3 Room 101
+*/
+
+import java.util.Scanner;
+
+public class P5_15 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a word/words you would like reversed, may I recomend 'Never odd or even' ");
+        String word = input.next();
+        System.out.println(reverse(word));
+        input.close();}
+
+    public static String reverse(String str) {
+            if (str.length() > 1) {
+        return reverse(str.substring(1)) + str.charAt(0);}
+        return str;}
+}
