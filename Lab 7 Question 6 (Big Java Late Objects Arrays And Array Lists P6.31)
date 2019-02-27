@@ -1,0 +1,79 @@
+/*
+Author Ross M 1105864
+Question 6 Big Java textbook Exercise - P6.31
+
+Improve the program of Exercise P6.30 so that it displays the top customers, that
+is, the topN customers with the largest sales, where topN is a value that the user of the
+program supplies.
+Implement a method
+public static ArrayList<String> nameOfBestCustomers(ArrayList<Double> sales,
+ArrayList<String> customers, int topN)
+If there were fewer than topN customers, include all of them.*/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class P6_31 {
+    public static void main(String[] args) {
+        ArrayList<Double> sales;
+        ArrayList<String> customers;
+        int topN;
+        try (Scanner input = new Scanner(System.in)) {
+            sales = new ArrayList<>();
+            customers = new ArrayList<>();
+            boolean isPriceZero = false;
+            while (!isPriceZero) {
+                System.out.print("£: ");
+                double sale = input.nextDouble();
+                
+                if (sale != 0) {
+                    sales.add(sale);
+                    System.out.print("Customer name: ");
+                    String customer = input.next();
+                    customers.add(customer);
+                } else {
+                    isPriceZero = true;
+                    System.out.println("End of day sales and customer names: ");}
+            }   System.out.print("How many favourite customers do you want to see?: ");
+            topN = input.nextInt();
+        }
+
+        System.out.println("Top customers of the day are: ");
+        ArrayList<String> bestCustomers = nameOfBestCustomers(sales, customers, topN);
+            for (int i = 0; i < bestCustomers.size(); i++) {
+        System.out.println(bestCustomers.get(i));}
+    }
+
+    public static ArrayList<String> nameOfBestCustomers(ArrayList<Double> sales, ArrayList<String> customers, int topN) {
+        if (topN >= customers.size()) {
+        return customers;
+            } else {
+    ArrayList<String> bestCustomers = new ArrayList<>();
+
+                while (topN > 0) {
+            String topCustomer = bestCustomer(sales, customers);
+            bestCustomers.add(topCustomer);
+
+                int indexOfCustomer = customers.indexOf(topCustomer);
+            sales.remove(indexOfCustomer);
+            customers.remove(indexOfCustomer);
+
+                topN--;}
+
+            return bestCustomers;}
+    }
+
+    public static String bestCustomer(ArrayList<Double> sales, ArrayList<String> customers) {
+        double bestCustomer = 0;
+        int notesForBiggestSale = 0;
+
+            for (int i = 0; i < sales.size(); i++) {
+        double theCurrentSale = sales.get(i);
+
+                if (theCurrentSale > bestCustomer) {
+            bestCustomer = theCurrentSale;
+            notesForBiggestSale = i;}
+        }
+
+        return customers.get(notesForBiggestSale);}
+}
