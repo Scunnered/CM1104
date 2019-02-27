@@ -1,0 +1,22 @@
+/*
+Author Ross M 1105864
+Question 2 Calculate the row-sums*/
+
+public static void Question2 () {
+public static void main(String[] args) {
+    
+        int[][] calculationsArray = {
+            {3,-5,8,-2,7},{4,8,-3,2,-8},{-5,8,-9,4,6},{1,-6,3,9,-11},{6,8,-3,-5,8} };
+    
+        show2DArray(sumsArray);
+        int[] rowSums = ArraySums2D.rows(sumsArray);
+            System.out.println("The row calculations = ");
+    
+        showArray(rowCalcs);
+            System.out.println("");
+        int[] columnsSums = ArraySums2D.columns(sumsArray);
+            System.out.println("The columns calculations = ");
+    
+        showArray(columnsCalcs);
+            System.out.println("");
+}
