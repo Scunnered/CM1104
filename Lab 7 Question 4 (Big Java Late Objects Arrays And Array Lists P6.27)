@@ -1,0 +1,57 @@
+/*
+Author Ross M 1105864
+Question 4 Big Java textbook Exercise - P6.27
+
+Write a method
+public static ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b)
+that merges two array lists, alternating elements from both array lists. If one array
+list is shorter than the other, then alternate as long as you can and then append the
+remaining elements from the longer array list. For example, if a is
+1  4  9  16
+and b is
+9  7  4  9  11
+then merge returns the array list
+1  9  4  7  9  4  16  9  11*/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class P6_27 {
+    public static void main(String[] args) {
+        ArrayList<Integer> firstArrayLength;
+        ArrayList<Integer> secondArrayList;
+        try (Scanner input = new Scanner(System.in)) {
+            firstArrayLength = new ArrayList<>();
+            System.out.print("enter 1st array length: ");
+            int firstArrayLengthList = input.nextInt();
+            for (int i = 0; i < firstArrayLengthList; i++) {
+                System.out.print("enter number for 1st array: ");
+                firstArrayLength.add(input.nextInt());}
+            secondArrayList = new ArrayList<>();
+            System.out.print("enter 2nd array length: ");
+            int secondArrayLengthList = input.nextInt();
+            for (int i = 0; i < secondArrayLengthList; i++) {
+                System.out.print("enter number for 2nd array: ");
+                secondArrayList.add(input.nextInt());}
+        }
+
+        ArrayList<Integer> newArrayList = merge(firstArrayLength, secondArrayList);
+        for (int i = 0; i < newArrayList.size(); i++) {
+            System.out.print(newArrayList.get(i) + " ");}
+    }
+
+    public static ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b) {
+        ArrayList<Integer> newArrayList = new ArrayList<>();
+
+        while (a.size() > 0 || b.size() > 0) {
+                if (a.size() > 0) {
+            newArrayList.add(a.get(0));
+            a.remove(0);}
+            
+                if (b.size() > 0) {
+            newArrayList.add(b.get(0));
+            b.remove(0);}
+        }
+
+        return newArrayList;}
+}
