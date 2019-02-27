@@ -1,0 +1,28 @@
+    
+/*
+Author Ross M 1105864
+Question 1 Double Arithmetic
+ */
+
+		***Shape One***
+
+ 	public static void main (String[] args)
+ 		  {
+  		  for (int count =0; count < 4; count++)
+      {
+      
+    		    for (int j=0; j < count+1; j++)
+       		System.out.print("*");
+    			System.out.println();}
+}
+    
+		***Shape two***
+
+ 	public static void main (String[] args)
+ 		{
+ 		  for (int count =7; count >= 0; count--)
+ 		{
+			  for (int j=0; j < count-1; j++)
+			System.out.print("*");
+			System.out.println();}
+}
