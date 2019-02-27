@@ -1,0 +1,17 @@
+    
+/*
+Author Ross M 1105864
+Question 4 Ten Rolls
+ */
+ 
+     	public static void main(String[] args)
+    		{
+        	for (int i = 1; i <= 10; i++)
+        	{
+
+        		int diceone = (int) (Math.random() * 6) + 1;
+        		int dicetwo = (int) (Math.random() * 6) + 1;
+        		System.out.println(diceone + dicetwo2);}
+        		
+    	System.out.println();
+}
