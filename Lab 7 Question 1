@@ -1,0 +1,43 @@
+/*
+Author Ross M 1105864
+Question 1 ShoppingList
+ */
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Question2 {
+
+        ArrayList<String> list = new ArrayList<>();
+        	list.add("dumplings");
+        	list.add("haggis");
+        	list.add("kale");
+        	list.add("rum");
+        	list.add("strawbs");
+  			list.add("Soap");}
+        
+		{
+        System.out.println("a. add fruit");
+        	addItem("Fruit", list);
+        	System.out.println(list);
+        
+        System.out.println("b. remove index 1");
+        	removeItem(1,list);
+        	System.out.println(list);
+        
+        System.out.println("c. search for dumplings");
+        	System.out.println(searchItem("dumplings", list));
+        	System.out.println(list); 
+        
+        System.out.println("d. change kale to Somthing unhealthy as I eat my feelings");
+        	replaceItem("kale", "mixer", list);
+        	System.out.println(list);
+        
+        System.out.println("e. remove item Somthing Unhealthy as I eat my feelings");
+        	System.out.println(removeItem2("mixer", list));
+        	System.out.println(list);
+        
+        System.out.println("f. remove item strawbs and return");
+        	System.out.println(removeItem3("Salad", list));
+          System.out.println(list);}{
+}
