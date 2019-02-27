@@ -1,0 +1,21 @@
+/*
+Author Ross M 1105864
+Length Conversion
+ */
+ 
+     	public static void main(String[] args) {
+
+        	final double FEETS_PER_METER = 3.2808399;
+        	final double INCHES_PER_METER = 39.3700787;
+
+        	try (Scanner in = new Scanner(System.in)) {
+            	System.out.print("Please enter amount of metres ");
+            	double measurmentsInMeters = in.nextDouble();
+            
+            		double measurmentsInFeets = measurmentsInMeters * FEETS_PER_METER;
+            		double measurmentsInInches = measurmentsInMeters * INCHES_PER_METER;
+            
+            			System.out.printf("%.2f meters - %.2f Feets\n", measurmentsInMeters, measurmentsInFeets);
+            			System.out.printf("%.2f meters - %.2f Inches\n", measurmentsInMeters, measurmentsInInches);
+        }
+    }
