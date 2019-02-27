@@ -1,0 +1,29 @@
+/*
+Author Ross M 1105864
+Question 7 Big Java textbook Exercise - P3.19
+
+Use recursion to compute a n , where n is a positive integer. Hint: If n is 1, then
+n = a. If n is even, then a n = (a n/2 ) 2 . Otherwise, a n = a × a n–1 .*/
+
+import java.util.Scanner;
+
+public class P5_19 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number for A: ");
+        int a = input.nextInt();
+        System.out.println("Enter a number for B: ");
+        int n = input.nextInt();
+        input.close();
+
+        System.out.println(analyseNums(a, n));}
+
+    public static int analyseNums(int a, int n) {
+            if (n == 1) {
+        return a;
+                } else if (n % 2 == 0) {
+        return analyseNums(a, n / 2) * analyseNums(a, n / 2);
+                } else {
+            return a * analyseNums(a, n - 1);}
+    }
+}
