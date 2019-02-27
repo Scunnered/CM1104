@@ -1,0 +1,20 @@
+/*
+Author Ross M 1105864
+Question 3 1D arrays of length 5
+*/
+
+public static void Question3 () {
+public static void main(String[] args) {
+    
+    }
+        int[] sumArray = {0,1,2,3,4};
+            boolean[] calNumbers = new boolean[5];
+            for (int i = 0; i < calNumbers.length; ++i) {
+            if(i == sumArray[i]) {
+            calNumbers[i] = true;}
+    
+        }
+            for (int i = 0; i < seenNumbers.length; ++i) {
+        System.out.println(seenNumbers[i]);}
+
+}
