@@ -1,0 +1,31 @@
+/*
+Author Ross M 1105864
+Question 1 Room 101
+*/
+
+import java.util.Scanner;
+
+public class Room101 {
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+        System.out.println("In meters, how high is the room? ");
+            double Height = in.nextDouble();
+            double cost = 2.0;    
+        System.out.println("In meters, how long is the room? ");
+            double Length = in.nextDouble();
+        System.out.println("In meters, what is the extent of the room? ");
+            double Range = in.nextDouble();
+        
+        System.out.println("The carpet area of floor - " + area(Length, Range) + " Per SqM");
+
+        System.out.println("The total area of wall - " + wallArea(Length, Range, Height) + " Per SqM");
+
+        System.out.println("Room volume - " + volume(Length, Range,Height);
+
+        System.out.println("Carpet cost = £" + carpetCost (Length, Range, cost));
+
+        System.out.println("Paint for wall cost = £" + wallCost (Length, Range, Height, cost));
+
+        System.out.println("Carpet tiles needed for room = " + numCarpetTiles(Length, Range));}
+}
