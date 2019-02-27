@@ -1,0 +1,15 @@
+    
+/*
+Author Ross M 1105864
+Question 3 Pair of Dice
+ */
+ 
+ 	public static void main(String[] args)
+        
+    		{
+    		  for (int i = 1; i <= 1; i++)
+   		  {
+
+       			int diceone = (int) (Math.random() * 6) + 1;
+        		int dicetwo = (int) (Math.random() * 12) + 1;
+        		System.out.println(diceone + " < six sided die throw! || twelve sided die throw!  > " + dicetwo);
