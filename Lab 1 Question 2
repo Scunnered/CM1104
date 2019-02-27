@@ -16,6 +16,6 @@ Length Conversion
             		double measurmentsInInches = measurmentsInMeters * INCHES_PER_METER;
             
             			System.out.printf("%.2f meters - %.2f Feets\n", measurmentsInMeters, measurmentsInFeets);
-            			System.out.printf("%.2f meters - %.2f Inches\n", measurmentsInMeters, measurmentsInInches);
-        }
+            			System.out.printf("%.2f meters - %.2f Inches\n", measurmentsInMeters, measurmentsInInches);}
+    
     }
