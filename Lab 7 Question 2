@@ -1,0 +1,19 @@
+/*
+Author Ross M 1105864
+Question 2 Names
+
+ */import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Question3 {
+	ArrayList<String> nameArray = new ArrayList<>();
+	nameList(nameList);}
+
+		removeDuplicateNames(nameArray);{
+		Collections.sort(nameArray);
+		nameList.remove(0);
+		nameList.remove(nameArray.size()-1);
+		addNamesToList(nameArray);
+		Collections.reverse(nameArray);
+		System.out.println(nameArray);
+}
