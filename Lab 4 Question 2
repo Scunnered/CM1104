@@ -1,0 +1,21 @@
+/*
+Author Ross M 1105864
+Question 2 Race the Computer 
+*/
+
+import java.util.Scanner;
+public class RaceTheComputer {
+
+    public static int die(){
+        int dieRoll = (int)((Math.random()*6)+1);
+        return dieRoll;
+
+            public static void main(String[] args) {
+                int playerScore = 0;
+                int masterControlProgramScore = 0;
+                while(masterControlProgramScore < 30 && playerScore < 30){
+                playerScore = playerScore + die();
+                masterControlProgramScore = masterControlProgramScore + die();}
+                
+                    System.out.println("Computer score is " + masterControlProgramScore+"." + "The Player score is " + playerScore );}
+}
