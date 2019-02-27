@@ -1,0 +1,69 @@
+/*
+Author Ross M 1105864
+Question 5 Big Java textbook Exercise - P3.11
+    
+Add error handling to Exercise P3.10. If the user does not enter a number when
+expected, or provides an invalid unit for the altitude, print an error message and end
+the program.
+ */
+
+import java.util.Scanner;
+
+public class Print_error_message {
+    public static void main(String[] args) {
+    final int meterForDegree = 300;
+    final int feetForDegree = 1000;
+
+    final int tempSolid = 0;    
+    final int tempBoil = 100;
+    
+    final double fPerC = 33.8;
+    
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("input either celsius or fahrenheit F / C: ");
+        char degreesType = in.next().toUpperCase().charAt(0);
+
+        System.out.print("input the temp of degrees: ");
+        double temperature = in.nextDouble();
+
+        System.out.println("input altitude M / F: ");
+        char altitudeType = in.next().toUpperCase().charAt(0);
+
+        System.out.println("input altitude value: ");
+        int altitude = in.nextInt();
+
+            int degreeDropAtCelsius = 0;
+            if (altitudeType == 'F') {
+                degreeDropAtCelsius = altitude / feetForDegree;}
+            else if (altitudeType == 'M') {
+                degreeDropAtCelsius = altitude / meterForDegree;}
+
+            if (degreesType == 'C') {
+            if (temperature <= tempSolid - degreeDropAtCelsius) {
+		System.out.println("Solid");}
+            else if (temperature >= tempBoil - degreeDropAtCelsius) {
+                System.out.println("Boil");
+                }
+            else {
+                System.out.println("Liquid");}
+                
+        }
+            else if (degreesType == 'F') {
+                temperature = temperature / fPerC;
+
+            if (temperature <= tempSolid - degreeDropAtCelsius) {
+            	System.out.println("Solid");}
+            else if (temperature >= tempBoil - degreeDropAtCelsius) {
+                System.out.println("Boil");}
+            else {
+                System.out.println("Liquid");
+            }
+        }
+        else {
+            System.out.println("You entered invalid input!");
+        }
+
+        in.close();
+    }
+}
