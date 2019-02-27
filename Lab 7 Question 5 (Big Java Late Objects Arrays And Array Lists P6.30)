@@ -1,0 +1,57 @@
+/*
+Author Ross M 1105864
+Question 5 Big Java textbook Exercise - P6.30
+
+A supermarket wants to reward its best customer of each day, showing the customer’s
+name on a screen in the supermarket. For that purpose, the customer’s purchase
+amount is stored in an ArrayList<Double> and the customer’s name is stored in a corresponding
+ArrayList<String>.
+Implement a method
+public static String nameOfBestCustomer(ArrayList<Double> sales,
+ArrayList<String> customers)
+that returns the name of the customer with the largest sale.
+Write a program that prompts the cashier to enter all prices and names, adds them to
+two array lists, calls the method that you implemented, and displays the result. Use a
+price of 0 as a sentinel.*/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class P6_30 {
+    public static void main(String[] args) {
+        ArrayList<Double> sales;
+        ArrayList<String> customers;
+        try (Scanner input = new Scanner(System.in)) {
+            sales = new ArrayList<>();
+            customers = new ArrayList<>();
+            boolean isPriceZero = false;
+            while (!isPriceZero) {
+                System.out.print("price of purchase £: ");
+                double sale = input.nextDouble();
+                
+                if (sale != 0) {
+                    sales.add(sale);
+                    System.out.print("Customer name: ");
+                    String shoppers = input.next();
+                    customers.add(shoppers);
+                } else {
+                    isPriceZero = true;
+                    System.out.println("End of day sales and customer names: ");}}
+        }
+
+        String bestCustomer = bestCustomer(sales, customers);
+        System.out.printf("name of favourite customer: ", bestCustomer);}
+
+    public static String bestCustomer(ArrayList<Double> sales, ArrayList<String> customers) {
+        double theBiggestSale = 0;
+        int notesForBiggestSale = 0;
+
+            for (int i = 0; i < sales.size(); i++) {
+        double theCurrentSale = sales.get(i);
+
+                if (theCurrentSale > theBiggestSale) {
+            theBiggestSale = theCurrentSale;
+            notesForBiggestSale = i;}}
+
+        return customers.get(notesForBiggestSale);}
+}
