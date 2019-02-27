@@ -1,0 +1,31 @@
+/*
+Author Ross M 1105864
+Question 1 Double Arithmetic
+ */
+
+import java.util.Scanner;
+ 
+public class Mortgage {
+public static void main(String args[]){
+ 
+   Scanner sc = new Scanner(System.in);
+ 
+
+        System.out.print("Enter mortgage amount: ");
+        double principal = sc.nextDouble(); 
+      
+        System.out.print("Annual interest rate: ");
+        double rate = sc.nextDouble(); 
+        rate = rate/100/12; 
+ 
+        System.out.print("Monthy interest rate: ");
+        int term = sc.nextInt();
+ 
+ 
+        term = term * 12; 
+        double payment = (principal * rate) / (1 - Math.pow(1 + rate, -term));
+ 
+   
+            payment = (double)Math.round(payment * 100) / 100;
+            System.out.println("Payment plan is as follows " + payment);}
+}
